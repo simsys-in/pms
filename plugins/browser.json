@@ -1,0 +1,88 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-nativeaudio": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-music-controls": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "mx.ferreyra.callnumber": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-android-fingerprint-auth": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.newhrms.dreamguys"
+    }
+  }
+}

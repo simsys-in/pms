@@ -1,0 +1,146 @@
+<!--
+    Generated template for the EmployeelistPage page.
+
+    See http://ionicframework.com/docs/components/#navigation for more info on
+    Ionic pages and navigation.
+    -->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+    <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title"> Tasks</h4>
+        </ion-title>
+        <!-- <ion-icon *ngIf="roleId == '1'" ios="ios-add" md="md-add" (click)="addEmployee()" class="notificationIcon"></ion-icon> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="background-content">
+    <div class="task-segment-div">
+
+        <ion-segment [(ngModel)]="tasks" class="task-segment">
+            <ion-segment-button class="task-segment-button" value="pending">
+                Pending
+            </ion-segment-button>
+            <ion-segment-button class="task-segment-button" value="completed">
+                Completed
+            </ion-segment-button>
+            <ion-segment-button class="task-segment-button1" value="all">
+                All
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="tasks">
+        <div class="segment-tab" *ngSwitchCase="'pending'">
+            <ion-list *ngIf="taskopen" class="holiday-list" style="margin-top: 20px !important">
+                <ion-item>
+                    <ion-label (click)="createTask()" class="task-label">
+                        <div>
+                            <ion-icon ios="ios-add" md="md-add" class="add-task"></ion-icon>
+                            <div class="tasks-div">
+                                <h4 class="tasks">
+                                    Add new task
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+                <div>
+                    <ion-item *ngFor="let task of pending;let i=index" [class.highlight]="task.btn_status == 'on'" [hidden]="task.btn_status=='off'">
+                        <ion-label (click)="openTask(task.id,task.narration,task.due_date,task.project_task,task.task_date,task.employee_id,task.hrs,task.task_log_id,task.status,task.btn_status)" class="task-label">
+                            <div>
+                                <ion-icon ios="ios-checkmark" md="md-checkmark" class="task-checkmark"></ion-icon>
+                                <!-- <ion-icon *ngIf="task.task_progress == 100" ios="ios-checkmark" md="md-checkmark" class="task-checkmark selected"></ion-icon> -->
+                                <div class="tasks-div">
+                                    <h4 class="tasks">
+                                        {{i+1}}. {{task.project_task}}
+                                        <!-- <img src="{{task.task_detail.avatar}}" class="taskuser-image" (error)="setDefaultUserPic(task)"> -->
+
+                                    </h4>
+
+
+                                </div>
+                            </div>
+                        </ion-label>
+                    </ion-item>
+                </div>
+
+            </ion-list>
+            <div *ngIf="!taskopen" class="dashboard-area">
+                <h3 class="nolist">No task are in open</h3>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="'completed'">
+            <ion-list *ngIf="taskcompleted" class="holiday-list" style="margin-top: 20px !important">
+                <ion-item>
+                    <ion-label class="task-label">
+                        <div>
+                            <ion-icon ios="ios-add" md="md-add" class="add-task"></ion-icon>
+                            <div class="tasks-div">
+                                <h4 class="tasks">
+                                    Add new task
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+                <ion-item *ngFor="let task of completed;let i=index" [hidden]="task.button_status=='completed'">
+                    <ion-label (click)="openTask(task.id,task.narration,task.due_date,task.project_task,task.task_date,task.employee_id,task.hrs,task.task_log_id,task.status,task.btn_status)" class="task-label">
+                        <div>
+                            <!-- <ion-icon *ngIf="task.task_progress != 100" ios="ios-checkmark" md="md-checkmark" class="task-checkmark"></ion-icon> -->
+                            <ion-icon ios="ios-checkmark" md="md-checkmark" class="task-checkmark selected"></ion-icon>
+                            <div class="tasks-div">
+                                <h4 class="tasks">
+                                    {{i+1}}. {{task.project_task}}
+                                    <!-- <img src="{{task.task_detail.avatar}}" class="taskuser-image" (error)="setDefaultUserPic(task)"> -->
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+            <div *ngIf="!taskcompleted" class="dashboard-area">
+                <h3 class="nolist">No task has been completed</h3>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="'all'">
+
+            <ion-list *ngIf="!notask" class="holiday-list" style="margin-top: 20px !important">
+                <ion-item>
+                    <ion-label (click)="createTask()" class="task-label">
+                        <div>
+                            <ion-icon ios="ios-add" md="md-add" class="add-task"></ion-icon>
+                            <div class="tasks-div">
+                                <h4 class="tasks">
+                                    Add new task
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+                <ion-item *ngFor="let task of all_task;let i=index" [class.highlight]="task.btn_status == 'on'">
+                    <ion-label (click)="openTask(task.id,task.narration,task.due_date,task.project_task,task.task_date,task.employee_id,task.hrs,task.task_log_id,task.status,task.btn_status)" class="task-label">
+                        <div>
+                            <ion-icon *ngIf="task.project_task != 100" ios="ios-checkmark" md="md-checkmark" class="task-checkmark"></ion-icon>
+                            <ion-icon *ngIf="task.project_task == 100" ios="ios-checkmark" md="md-checkmark" class="task-checkmark selected"></ion-icon>
+                            <div class="tasks-div">
+                                <h4 class="tasks">
+                                    {{i+1}}. {{task.project_task}}
+                                    <!-- <img src="{{task.task_detail.avatar}}" class="taskuser-image" (error)="setDefaultUserPic(task)"> -->
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+            <div *ngIf="notask" class="dashboard-area">
+                <h3 class="nolist">No task has been added</h3>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

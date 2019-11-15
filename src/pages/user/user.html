@@ -1,0 +1,29 @@
+<!--
+  Generated template for the DepartmentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">User</h4>
+        </ion-title>
+        <div class="notification-div">
+            <ion-icon ios="ios-add" md="md-add" (click)="addUser()" class="notificationIcon"></ion-icon>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding class="background-content">
+    <ion-row>
+        <ion-col col-12>
+            <div class="dept-widget" *ngFor="let row of users">
+                <h4 class="dept-name" (click)="addUser(row)">{{row.name}}</h4>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,37 @@
+<!--
+  Generated template for the AddDepartmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Add Department</h4>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content no-bounce padding>
+    <form>
+        <ion-list class="inputLabel">
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Department Name</ion-label>
+                <ion-input type="hidden" [(ngModel)]="f.id" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input class="addInput" type="text" [(ngModel)]="f.department" [ngModelOptions]="{standalone: true}" #e></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+
+        <button type="submit" [disabled]="this.f.id" color="primary" class="loginButton" (click)="createDept()" ion-button full>Create Department</button>
+        <button type="submit" [disabled]="!this.f.id" color="info" class="loginButton" (click)="update(this.f.id)" ion-button full>Update Department</button>
+        <button type="submit" [disabled]="!this.f.id" color="danger" class="loginButton" (click)="delete(this.f.id)" ion-button full>Delete Department</button>
+    </form>
+</ion-content>

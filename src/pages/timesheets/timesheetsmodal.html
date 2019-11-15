@@ -1,0 +1,46 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Timesheet</h4>
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-list class="holiday-list" style="margin-top: 4% !important">
+        <ion-item>
+            <div>
+                <h4 class="holiday-title"></h4>
+                <span class="holiday-days-div">
+          <h2 class="timeline_date">{{timesheet.date}}
+          </h2>
+        </span>
+            </div>
+            <div class="holiday-card">
+                <h4 class="timesheet-project"><b>Task:</b> {{timesheet.project_task}}</h4>
+
+            </div>
+            <div class="timesheet-hour-div">
+                <h2 class="timesheet-hours" style="margin-right:10px !important;">{{timesheet.total_days}} {{ timesheet.total_hours }} {{timesheet.total_mins}} {{timesheet.total_seconds}} </h2>
+            </div>
+        </ion-item>
+        <div class="timesheet-description-div">
+            <p>Work Description:</p>
+            <h5 class="timesheet-description">{{timesheet.narration}}</h5>
+        </div>
+
+    </ion-list>
+</ion-content>
+
+
+<!--
+  Generated template for the LeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->

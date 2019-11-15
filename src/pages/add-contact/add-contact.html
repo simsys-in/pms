@@ -1,0 +1,95 @@
+<!--
+  Generated template for the AddDepartmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Add Contact</h4>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content no-bounce padding>
+    <form>
+        <ion-list class="inputLabel">
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Contact Name</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.contact_name" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Company</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.company" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Company Category</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.company_category" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Group</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.group" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Email</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.email" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Mobile</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.mobile" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Phone</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.phone" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Designation</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.designation" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>City</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.city" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>State</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.state" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Source From</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.source_from" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="addInput-Label" floating>Last Accessing Date</ion-label>
+                <ion-datetime  [(ngModel)]="f.last_acs_date" [ngModelOptions]="{standalone:true}" > </ion-datetime>
+              </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Website</ion-label>
+                
+                <ion-input class="addInput" [(ngModel)]="f.web" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+
+        <button type="submit"  color="primary" class="loginButton" (click)="createContact()" ion-button full>Create Contact</button>
+        <!-- <button type="submit" color="info" class="loginButton" (click)="update(this.f.id)" ion-button full>Update Contact</button>
+        <button type="submit" color="danger" class="loginButton" (click)="delete(this.f.id)" ion-button full>Delete Contact</button> -->
+    </form>
+</ion-content>
