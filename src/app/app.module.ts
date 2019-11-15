@@ -97,7 +97,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { Values } from "./config/values";
 import { ConfigServiceTsProvider } from '../providers/config-service-ts/config-service-ts';
 import { IonicStorageModule } from '@ionic/storage';
-import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+
 import { MusicControls } from "@ionic-native/music-controls/ngx";
 import { BranchPage } from "../pages/branch/branch";
 import { AddBranchPage } from "../pages/add-branch/add-branch";
@@ -124,13 +124,16 @@ import { UserPage } from "../pages/user/user";
 import { UserGroupPage } from "../pages/user-group/user-group";
 import { AddUserPage } from "../pages/add-user/add-user";
 import { AddUserGroupPage } from "../pages/add-user-group/add-user-group";
-
-
-
+import { BackgroundMode } from "@ionic-native/background-mode/ngx";
+import { ProjectReportPage } from "../pages/project-report/project-report";
+import { DatePicker } from '@ionic-native/date-picker/ngx';
+import {DatePipe} from '@angular/common';
+import { MonthlyTimesheetPage } from "../pages/monthly-timesheet/monthly-timesheet";
 @NgModule({
   
   declarations: [
-    
+    MonthlyTimesheetPage,
+    ProjectReportPage,
     AddUserGroupPage,
     AddUserPage,
     UserPage,
@@ -265,7 +268,7 @@ BrowserModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    
+  ProjectReportPage , 
     AddUserPage,
     UserGroupPage,
     AddUserGroupPage,
@@ -317,7 +320,7 @@ BrowserModule,
     ChatListPage,
     ProjectviewPage,
     ChatPage,
-    
+    MonthlyTimesheetPage,
     ProjectlistPage,
     AttendanceDetailsFilterPage,
     TaskDetailsPage,
@@ -380,19 +383,18 @@ BrowserModule,
     AddEmployeePage,
   ],
   providers: [
-    Clipboard,
-    
+     
     AndroidFingerprintAuth,
     AndroidPermissions,
     CallNumber,
-    BackgroundMode,
+    
     IonicErrorHandler,
     ModalController,
     AlertController,
     StatusBar,
     Angular2FontawesomeModule,
     Calendar,
-    
+    BackgroundMode,
     ApiService,
     
     OneSignal,
@@ -419,6 +421,8 @@ BrowserModule,
 
   { provide: ErrorHandler, useClass: IonicErrorHandler ,},
     ConfigServiceTsProvider,
+    DatePicker,
+    DatePipe
 
       
     

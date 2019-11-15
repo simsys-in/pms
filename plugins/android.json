@@ -1,0 +1,108 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-android-fingerprint-auth": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-music-controls": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-nativeaudio": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-opentok": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "mx.ferreyra.callnumber": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "org.simsys.simshrms"
+    }
+  }
+}

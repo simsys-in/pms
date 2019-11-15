@@ -5,7 +5,8 @@ import { config } from "../app/config/config";
 
 
  @Injectable()
-export class ApiService{ 
+export class ApiService{
+   removeId1: any; 
 
 constructor(public http:HttpClient,
 
@@ -32,7 +33,11 @@ setCpin(cpin){
   localStorage.setItem('key3',cpin)
 }
 getCpin(){
-  return localStorage.key3;
+  return localStorage.getItem('key3');
+}
+
+removeCpin(){
+  return localStorage.removeItem('key3')
 }
 setToken(value){
   localStorage.setItem("token",'Bearer '+value);
@@ -129,12 +134,7 @@ getResId(){
   return localStorage.getItem('id2');
 }
 
-setPin(pin){
-  localStorage.setItem('j',pin)
-}
-getPin(){
-  return localStorage.removeItem('key3');
-}
+
 
 setPermissions(permissions){
   localStorage.setItem('permissions',permissions)
@@ -150,8 +150,13 @@ setSaveId(id1){
 getSaveID(){
   return localStorage.getItem('saveId');
 }
+
 removeId(){
    return  localStorage.removeItem('saveId')
 }
+
+
+
+
 
 }

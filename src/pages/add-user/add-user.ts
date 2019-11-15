@@ -35,13 +35,15 @@ export class AddUserPage {
   public token;
   primaryColor: any;
   secondryColor: any;
+  
 f={
- username:'',
+name:'',
  mobile:'',
  password:'',
  user_group_id:'',
  email:'',
  contact_name:'',
+ cpin:'',
 id:'',
 }
   disabled=true;
@@ -53,6 +55,7 @@ id:'',
   ports: { id: number; name: string; country: string; }[];
   
   user: any;
+  user_groups: any;
 
 
   constructor(public navCtrl: NavController, 
@@ -66,15 +69,17 @@ id:'',
     public refservice:ReferenceService,
     private apiService: ApiService, private referenceService: ReferenceService, private http: HttpClient) {
  
+this.f.cpin=this.apiService.getCpin();
+
     this.primaryColor = localStorage.getItem('primary_color');
 this.user=this.navParams.get("user");
 if(this.user!=null){
-  this.f.username=this.user.name;
+  this.f.name=this.user.name;
   this.f.id=this.user.id
 
 }
 else{
-  this.f.username='';
+  this.f.name='';
   this.f.id='';
 }
   }
@@ -86,7 +91,10 @@ httpOptions={headers:new HttpHeaders({
   })}
 
   ionViewWillEnter() {
-
+this.http.get(config.apiUrl+"core/user_group",this.httpOptions).subscribe(res=>{
+  this.user_groups=res;
+  console.log(this.user_groups);
+})
 
   };
   setFilteredItems() {
@@ -95,9 +103,9 @@ httpOptions={headers:new HttpHeaders({
 
 
 
-  createDept() {
+  createUser() {
 
-    this.http.post<any>(config.apiUrl+"payroll/user",this.f,this.httpOptions).subscribe(res=>{
+    this.http.post<any>(config.apiUrl+"core/users",this.f,this.httpOptions).subscribe(res=>{
        console.log(res);
        if(res.status==true){
        let toast = this.tostr.create({
@@ -121,7 +129,7 @@ httpOptions={headers:new HttpHeaders({
   }
   update(id){
     //this.refservice.basicAlert("id",id)
-    this.http.put(config.apiUrl+"payroll/user/"+id,this.f,this.httpOptions).subscribe(res=>{
+    this.http.put(config.apiUrl+"core/users/"+id,this.f,this.httpOptions).subscribe(res=>{
       console.log(res);
       if(res["status"]=="updated"){
         let toast = this.tostr.create({
@@ -140,7 +148,7 @@ httpOptions={headers:new HttpHeaders({
 
 delete(id){
   //this.referenceService.basicAlert("id",id);
-  this.http.delete(config.apiUrl+"payroll/user/"+id,this.httpOptions).subscribe(res=>{
+  this.http.delete(config.apiUrl+"core/users/"+id,this.httpOptions).subscribe(res=>{
     console.log(res)
     if(res["success"]==true){
       let toast = this.tostr.create({

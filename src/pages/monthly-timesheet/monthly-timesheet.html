@@ -1,0 +1,99 @@
+<!--
+  Generated template for the MonthlyTimesheetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Monthly Timesheet</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <tr *ngFor="let row of days;let i=index">
+                <th>Employee</th>
+                <th>Rate</th>
+                <th>{{row[1]}}</th>
+                <th>{{row[2]}}</th>
+                <th>{{row[3]}}</th>
+                <th>{{row[4]}}</th>
+                <th>{{row[5]}}</th>
+                <th>{{row[6]}}</th>
+                <th>{{row[7]}}</th>
+                <th>{{row[8]}}</th>
+                <th>{{row[9]}}</th>
+                <th>{{row[10]}}</th>
+                <th>{{row[11]}}</th>
+                <th>{{row[12]}}</th>
+                <th>{{row[13]}}</th>
+                <th>{{row[14]}}</th>
+                <th>{{row[15]}}</th>
+                <th>{{row[16]}}</th>
+                <th>{{row[17]}}</th>
+                <th>{{row[18]}}</th>
+                <th>{{row[19]}}</th>
+                <th>{{row[20]}}</th>
+                <th>{{row[21]}}</th>
+                <th>{{row[22]}}</th>
+                <th>{{row[23]}}</th>
+                <th>{{row[24]}}</th>
+                <th>{{row[25]}}</th>
+                <th>{{row[26]}}</th>
+                <th>{{row[27]}}</th>
+                <th>{{row[28]}}</th>
+                <th>{{row[29]}}</th>
+                <th>{{row[30]}}</th>
+                <th>{{row[31]}}</th>
+                <th>Hrs</th>
+                <th>Amount</th>
+
+            </tr>
+            <tr *ngFor="let row of this.lists;let i=index">
+                <td>{{row.employee}}</td>
+                <td>{{row.salary}}</td>
+                <td>{{row.hrs[1]}}</td>
+                <td>{{row.hrs[2]}}</td>
+                <td>{{row.hrs[3] |number : '1.2-2'}}</td>
+                <td>{{row.hrs[4]}}</td>
+                <td>{{row.hrs[5]}}</td>
+                <td>{{row.hrs[6]}}</td>
+                <td>{{row.hrs[7]}}</td>
+                <td>{{row.hrs[8]}}</td>
+                <td>{{row.hrs[9]}}</td>
+                <td>{{row.hrs[10]}}</td>
+                <td>{{row.hrs[10]}}</td>
+                <td>{{row.hrs[11]}}</td>
+                <td>{{row.hrs[12]}}</td>
+                <td>{{row.hrs[13]}}</td>
+                <td>{{row.hrs[14]}}</td>
+                <td>{{row.hrs[15]}}</td>
+                <td>{{row.hrs[15]}}</td>
+                <td>{{row.hrs[17]}}</td>
+                <td>{{row.hrs[18]}}</td>
+                <td>{{row.hrs[19]}}</td>
+                <td>{{row.hrs[20]}}</td>
+                <td>{{row.hrs[21]}}</td>
+                <td>{{row.hrs[22]}}</td>
+                <td>{{row.hrs[23]}}</td>
+                <td>{{row.hrs[24]}}</td>
+                <td>{{row.hrs[25]}}</td>
+                <td>{{row.hrs[26]}}</td>
+                <td>{{row.hrs[27]}}</td>
+                <td>{{row.hrs[28]}}</td>
+                <td>{{row.hrs[29]}}</td>
+                <td>{{row.hrs[30]}}</td>
+                <td>{{row.hrs[31]}}</td>
+                <td>{{row.hrs_sum}}</td>
+                <td>{{row.salary_sum}}</td>
+
+
+            </tr>
+
+        </table>
+    </div>
+
+
+</ion-content>

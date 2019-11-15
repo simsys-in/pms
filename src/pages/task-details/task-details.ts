@@ -16,7 +16,7 @@ import { key } from 'localforage';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { AnyARecord } from 'dns';
+import { AnyARecord, reverse } from 'dns';
 import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 import { TasksPage } from '../tasks/tasks';
 import { HomePage } from '../home/home';
@@ -39,7 +39,7 @@ export class TaskDetailsPage {
   @ViewChild(Content) content: Content;
 public disabled=false;
 status1='Open';
-
+NewId: any;
 buttonIcon: string;
   isPlaying:any;
 isPause=false;
@@ -70,13 +70,8 @@ private visible = [];
   task_log_id: any;
   narration: any;
   project_task: any;
-  dateTime: string;
-  val:any={
-    status_id:'1',
-      task_id:this.id,
-      id:this.task_log_id,
-    start_time:this.dateTime
-    };
+  dateTime:any;
+
 f:any={
   narration:this.narration,
   id:this.id,
@@ -96,11 +91,12 @@ f:any={
   response: any;
   date: any;
 
+ 
   data: {task_id:any, id: any; status_id: any;  };
 
   status: any;
   button: any;
-  newId: string;
+  
   newStatus: any;
   _audioProvider: any;
   items: any;
@@ -116,10 +112,15 @@ f:any={
   btn_status: any;
   date1: Date;
   
-  saveId: void;
+  saveId: any;
   receiveId: any;
   button1: any;
   state: number;
+  saveId1: any;
+  name1: any;
+  val: { status_id: any; task_id: any; id: any; start_time: any; };
+  
+  
 
   constructor(public navCtrl: NavController, 
     public viewCtrl:ViewController,
@@ -135,6 +136,8 @@ f:any={
     this.color = localStorage.getItem('colorCode');
     this.primaryColor = localStorage.getItem('primary_color');
     this.id = this.navParams.get('id');
+this.NewId=this.apiService.getSaveID()
+
     this.narration=this.navParams.get('narration');
     this.due_date=this.navParams.get('due_date');
     this.project_task=this.navParams.get('project_task');
@@ -171,7 +174,7 @@ ionViewWillEnter() {
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   this.dateTime = date+' '+time;
-   
+
    this.onLoadIcon();
    this.apiService.setId(this.id);
    this.apiService.setNarration(this.narration);
@@ -225,12 +228,13 @@ if (this.buttonIcon === 'play') {
 this.http.post(config.apiUrl+"projectManagement/project_report/save_task_log",this.f1,this.httpOptions).subscribe(res=>{
 this.task_log_id1=res['id'];
 
-this.saveId=this.apiService.setSaveId(this.task_log_id1);
-
+this.apiService.setSaveId(this.task_log_id1);
 
 if(res['status']=='created'){
   //this.navCtrl.pop(); 
-   return true;
+  this.name1=res["status"];
+   
+  return  this.reverse()
 }
 })
 
@@ -244,7 +248,7 @@ this.data={
  }
 this.http.post(config.apiUrl+"projectManagement/project_report/save_task_log",this.data,this.httpOptions).subscribe(res=>{
  console.log(res);
- 
+
 this.end_time=res['end time updated']
  })
 }
@@ -253,12 +257,26 @@ complete() {
  let alert = this.referenceservice.confirmAlert("Confirm to complete", "Do you want to continue to add this task to complete list?");
   alert.present();
   alert.onDidDismiss((data) => {
+    this.val={
+      status_id:'1',
+        task_id:this.id,
+        id:this.NewId,
+      start_time:this.dateTime
+      };
 this.http.post(config.apiUrl+"projectManagement/project_report/update_task_log_end_time",this.val,this.httpOptions).subscribe(res=>{
 console.log(res);
-//this.complete1();
+if(res[status]=='completed'){
+this.apiService.removeId();
+}
+
 this.navCtrl.pop();
 }) 
   });
+}
+reverse(){
+this.navCtrl.push(TasksPage,{
+ name:this.name1
+})
 }
 
   getHeaderStyle() {

@@ -17,6 +17,7 @@ import { MusicControls } from '@ionic-native/music-controls/ngx';
 import { e } from '@angular/core/src/render3';
 import { IfStmt } from '@angular/compiler';
 import { constants } from 'os';
+import { reverse } from 'dns';
 /**
  * Generated class for the EmployeelistPage page.
  *
@@ -30,7 +31,7 @@ import { constants } from 'os';
 })
 export class TasksPage {
   @ViewChild(Content) content: Content;
-
+public disabled:boolean=false;
   token: any;
   url: any;
   loading: any;
@@ -54,15 +55,18 @@ export class TasksPage {
   completed: any;
   complete_task_name: any;
   pending: any=[];
-  all_task: Object;
+  all_task: any=[];
   hrs: any;
   isPlaying: boolean;
   platform: any;
-  disabled: boolean;
+  
   one: any;
 saveId:any=[];
   btn: any;
   offId: any;
+  button: any;
+  saveId1: any;
+  reverseId: any;
   constructor(public navCtrl: NavController,
     private backgroundmode:BackgroundMode,
     public dataservice:DataService, public apiService: ApiService, 
@@ -71,7 +75,10 @@ saveId:any=[];
     private musicControls: MusicControls,
         public modalCtrl: ModalController, public popoverCtrl: PopoverController, private referenceservice: ReferenceService, public navParams: NavParams, private http: HttpClient) {
     this.role = localStorage.getItem('role');
-  
+    this.reverseId=this.navParams.get("name");
+
+
+
     this.roleId = localStorage.getItem('role_id');
     this.color = localStorage.getItem('colorCode');
     this.primaryColor = localStorage.getItem('primary_color')
@@ -163,7 +170,17 @@ saveId:any=[];
     });
   }
 ionViewWillEnter(){
-
+  
+if(this.saveId=='on'){
+  
+  this.disabled=true
+}
+else if(this.pending.length==0){
+  this.disabled=false;
+}
+else{
+  return false;
+}
 }
 
 
@@ -171,12 +188,14 @@ ionViewDidEnter(){
   this.http.get(config.apiUrl+"projectManagement/project_task/completed",this.httpOptions).subscribe(res=>{
     this.completed=res;
 
+
     });
     this.http.get(config.apiUrl+"projectManagement/project_task/pending",this.httpOptions).subscribe(res=>{
       this.pending=res;
       this.pending.forEach(element => {
      if(element.btn_status=="on"){
 this.saveId=element.btn_status;
+
 
      }
      else if(element.btn_status=="off"){
@@ -188,6 +207,12 @@ this.offId=element.btn_status;
     this.http.get(config.apiUrl+"projectManagement/project_task",this.httpOptions).subscribe(res=>{
       this.all_task=res;
       this.hrs=res[0]['hrs'];
+      this.all_task.forEach(element=>{
+this.button=element.btn_status;
+if(this.button=="off"){
+this.disabled=true;
+}
+      })
       
     })
     

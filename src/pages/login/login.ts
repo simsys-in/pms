@@ -69,7 +69,7 @@ diasbled=true;
 
 name:any;
 f={
-  email:'sankar7@gmail.com',
+  email:'',
   password:'',
     cpin:''
 }
@@ -236,7 +236,7 @@ register(){
 }
 
 clearCpin(){
-this.pin=this.apiservice.getPin();
+this.pin=this.apiservice.removeCpin();
 this.f.cpin=this.pin
 }
 

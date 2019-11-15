@@ -13,7 +13,7 @@
 
         </ion-list>
 
-  
+
         <ion-list class="side-menu-list" (click)="openSub('empMenu')">
             <button class="sidemenu-button" ion-item>
         Employee
@@ -128,10 +128,10 @@
         </ion-list>
 
         <ion-list class="side-menu-list" (click)="openPage('add-contact')">
-          <button class="sidemenu-button" menuClose ion-item>
+            <button class="sidemenu-button" menuClose ion-item>
       Contact
     </button>
-      </ion-list>
+        </ion-list>
 
         <ion-list class="side-menu-list" (click)="openPage('chatlist')">
             <button class="sidemenu-button" menuClose ion-item>
@@ -150,7 +150,7 @@
           Voice Call
         </button>
             </ion-list>
-          
+
             <ion-list class="side-menu-list" (click)="openPage('videocall')">
                 <button class="sidemenu-button" menuClose ion-item>
           Video Call
@@ -165,24 +165,42 @@
 
 
         <ion-list class="side-menu-list" (click)="openSub('ToolsMenu')">
-          <button class="sidemenu-button" ion-item>
+            <button class="sidemenu-button" ion-item>
       Tools
       <ion-icon [name]="selectedPage == 'ToolsMenu'? 'arrow-down' : 'arrow-forward'" float-right></ion-icon>
     </button>
-      </ion-list>
-      <div *ngIf="selectedPage == 'ToolsMenu'" class="subMenu">
-          <ion-list class="side-menu-list" (click)="openPage('user')">
-              <button class="sidemenu-button" menuClose ion-item>
+        </ion-list>
+        <div *ngIf="selectedPage == 'ToolsMenu'" class="subMenu">
+            <ion-list class="side-menu-list" (click)="openPage('user')">
+                <button class="sidemenu-button" menuClose ion-item>
         User
       </button>
-          </ion-list>
-          <ion-list class="side-menu-list" (click)="openPage('user-group')">
-            <button class="sidemenu-button" menuClose ion-item>
+            </ion-list>
+            <ion-list class="side-menu-list" (click)="openPage('user-group')">
+                <button class="sidemenu-button" menuClose ion-item>
       User Group
     </button>
+            </ion-list>
+
+        </div>
+
+
+        <ion-list class="side-menu-list" (click)="openSub('ReportMenu')">
+            <button class="sidemenu-button" ion-item>
+    Report
+    <ion-icon [name]="selectedPage == 'ReportMenu'? 'arrow-down' : 'arrow-forward'" float-right></ion-icon>
+  </button>
         </ion-list>
-        
-      </div>
+        <div *ngIf="selectedPage == 'ReportMenu'" class="subMenu">
+            <ion-list class="side-menu-list" (click)="openPage('project-report')">
+                <button class="sidemenu-button" menuClose ion-item>
+      Project Report
+    </button>
+            </ion-list>
+
+
+        </div>
+
 
 
         <div>

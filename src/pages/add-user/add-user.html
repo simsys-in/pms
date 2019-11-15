@@ -20,37 +20,39 @@
         <ion-list class="inputLabel">
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>User Name</ion-label>
-                
-                <ion-input class="addInput" [(ngModel)]="f.username" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+
+                <ion-input class="addInput" [(ngModel)]="f.name" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
             </ion-item>
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>Mobile</ion-label>
-                
+
                 <ion-input class="addInput" [(ngModel)]="f.mobile" [ngModelOptions]="{standalone:true}" type="mobile"></ion-input>
             </ion-item>
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>Password</ion-label>
-                
+
                 <ion-input class="addInput" [(ngModel)]="f.password" [ngModelOptions]="{standalone:true}" type="password"></ion-input>
             </ion-item>
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>User Group</ion-label>
-                
-                <ion-input class="addInput" [(ngModel)]="f.user_group_id" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
+
+                <ion-select [(ngModel)]="f.user_group_id" [ngModelOptions]="{standalone:true}">
+                    <ion-option *ngFor="let row of user_groups" [value]="row.id">{{row.user_group}}</ion-option>
+                </ion-select>
             </ion-item>
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>Email</ion-label>
-                
+
                 <ion-input class="addInput" [(ngModel)]="f.email" [ngModelOptions]="{standalone:true}" type="email"></ion-input>
             </ion-item>
             <ion-item class="inputItem">
                 <ion-label class="addInput-Label" floating>Contact Name</ion-label>
-                
+
                 <ion-input class="addInput" [(ngModel)]="f.contact_name" [ngModelOptions]="{standalone:true}" type="text"></ion-input>
             </ion-item>
-          </ion-list>
-            <button type="submit" [disabled]="this.f.id"  color="primary" class="loginButton" (click)="createContact()" ion-button full>Create User</button>
-         <button type="submit" color="info" [disabled]="!this.f.id" class="loginButton" (click)="update(this.f.id)" ion-button full>Update User</button>
+        </ion-list>
+        <button type="submit" [disabled]="this.f.id" color="primary" class="loginButton" (click)="createUser()" ion-button full>Create User</button>
+        <button type="submit" color="info" [disabled]="!this.f.id" class="loginButton" (click)="update(this.f.id)" ion-button full>Update User</button>
         <button type="submit" color="danger" [disabled]="!this.f.id" class="loginButton" (click)="delete(this.f.id)" ion-button full>Delete User</button>
     </form>
-</ion-content>    
+</ion-content>

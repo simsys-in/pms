@@ -73,6 +73,8 @@ import { UserPage } from "../pages/user/user";
 import { UserGroupPage } from "../pages/user-group/user-group";
 import { AddUserPage } from "../pages/add-user/add-user";
 import { TestPage } from "../pages/test/test";
+import { ProjectReportPage } from "../pages/project-report/project-report";
+import { MonthlyTimesheetPage } from "../pages/monthly-timesheet/monthly-timesheet";
 
 
 @Injectable()
@@ -174,6 +176,8 @@ export class MyApp {
         { title: "user", component: UserPage  ,menu:"user",route:UserPage},
         { title: "user-group", component: UserGroupPage  ,menu:"user-group",route:UserGroupPage},
         { title: "add-user", component: AddUserPage  ,menu:"add-user",route:AddUserPage},
+        { title: "project-report", component: ProjectReportPage  ,menu:"projct-report",route:ProjectReportPage},
+        { title: "monthly-timesheet", component: MonthlyTimesheetPage  ,menu:"monthly-timesheet",route:MonthlyTimesheetPage},
          ];
 
       }
